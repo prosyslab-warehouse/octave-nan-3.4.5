@@ -1,0 +1,341 @@
+octave-nan (3.4.5-1) unstable; urgency=medium
+
+  * New upstream version 3.4.5
+  * Drop patches (applied upstream):
+    + d/p/spelling-fix-in-train-help-str.patch
+    + d/p/drop-no-undefined-ldflags.patch
+    + d/p/fix-spelling-str2array.patch
+
+ -- Rafael Laboissière <rafael@debian.org>  Sat, 14 Dec 2019 14:22:06 -0300
+
+octave-nan (3.4.3-1) unstable; urgency=medium
+
+  * New upstream version 3.4.3
+  * d/copyright: Reflect upstream changes
+  * d/p/spelling-fix-in-train-help-str.patch: Refresh for new upstream version
+  * Drop patches (fixed upstream):
+    + d/p/workaround-for-mkoctfile-bug.patch
+    + d/p/build-against-libsvm-dev.patch
+    + d/p/reduce_test_memory_footprint.patch
+  * d/control:
+    + Bump Standards-Version to 4.4.1 (no changes needed)
+    + Bump dependency on dh-octave to >= 0.7.1
+      This allows the injection of the virtual package octave-abi-N
+      into the package's list of dependencies.
+    + Build-Depends on liblinear-dev
+  * d/clean: Clean files left over after building the package
+  * d/rules: Drop obsolete target override_dh_auto_clean
+  * d/s/lintian-overrides: Drop unused override
+  * d/p/drop-no-undefined-ldflags.patch: New patch
+  * d/p/fix-spelling-str2array.patch: New patch
+
+ -- Rafael Laboissiere <rafael@debian.org>  Wed, 13 Nov 2019 11:20:05 -0300
+
+octave-nan (3.1.4-5) unstable; urgency=medium
+
+  * d/control:
+    + Add Rules-Requires-Root: no
+    + Bump Standards-Version to 4.3.0
+    + Bump to debhelper compat level 12
+  * Build-depend on debhelper-compat instead of using d/compat
+
+ -- Rafael Laboissiere <rafael@debian.org>  Wed, 02 Jan 2019 22:56:43 -0200
+
+octave-nan (3.1.4-4) unstable; urgency=medium
+
+  [ Mike Miller ]
+  * d/control, d/copyright: Use secure URL for upstream source.
+
+  [ Rafael Laboissiere ]
+  * d/control: Bump Standards-Version to 4.1.4 (no changes needed)
+  * d/rules: Ensures that rm command will not fail
+
+  [ Sébastien Villemot ]
+  * workaround-for-mkoctfile-bug.patch: new patch, fixes FTBFS against
+    Octave 4.4
+
+ -- Sébastien Villemot <sebastien@debian.org>  Wed, 13 Jun 2018 21:45:32 +0200
+
+octave-nan (3.1.4-3) unstable; urgency=medium
+
+  * Use dh-octave for building the package
+  * d/control:
+     + Use Debian's GitLab URLs in Vcs-* headers
+     + Change Maintainer to team+pkg-octave-team@tracker.debian.org
+
+ -- Rafael Laboissiere <rafael@debian.org>  Sat, 10 Feb 2018 07:34:18 -0200
+
+octave-nan (3.1.4-2) unstable; urgency=medium
+
+  * Use the dh-based version of octave-pkg-dev
+  * Set debhelper compatibility level to >= 11
+  * d/control: Bump Standards-Version to 4.1.3 (no changes needed)
+
+ -- Rafael Laboissiere <rafael@debian.org>  Fri, 29 Dec 2017 22:14:05 -0200
+
+octave-nan (3.1.4-1) unstable; urgency=medium
+
+  [ Rafael Laboissiere ]
+  * New upstream version 3.1.4
+  * d/control: Add Testsuite field
+  * d/control: Bump Standards-Version to 4.1.1 (no changes needed)
+
+  [ Sébastien Villemot ]
+  * d/copyright: reflect upstream changes.
+
+ -- Sébastien Villemot <sebastien@debian.org>  Thu, 19 Oct 2017 10:40:06 +0200
+
+octave-nan (3.1.2-2) unstable; urgency=medium
+
+  [ Sébastien Villemot ]
+  * Upload to unstable.
+  * d/copyright: use secure URL for format.
+  * d/control: remove unnecessary versioned dependency on octave-pkg-dev.
+
+  [ Rafael Laboissiere ]
+  * d/control: Use cgit instead of gitweb in Vcs-Browser URL
+
+ -- Sébastien Villemot <sebastien@debian.org>  Mon, 12 Jun 2017 14:48:19 +0200
+
+octave-nan (3.1.2-1) experimental; urgency=medium
+
+  * New upstream version 3.1.2
+  * d/copyright: Reflect upstream changes
+  * d/p/spelling-fix-in-train-help-str.patch: New patch
+
+ -- Rafael Laboissiere <rafael@debian.org>  Tue, 07 Feb 2017 19:07:54 -0200
+
+octave-nan (3.1.1-1) unstable; urgency=medium
+
+  * New upstream version 3.1.1
+  * d/copyright: reflect upstream changes.
+  * Bump to debhelper compat level 10.
+  * d/watch: upgrade to format version 4.
+  * build-against-libsvm-dev.patch: update patch.
+    Now rely on the new HAVE_EXTERNAL_LIBSVM flag. Also remove completely
+    svm.{cpp,h} from the source tree, to be sure to pick up the external
+    library.
+  * Add a lintian source override for removed svm.h.
+
+ -- Sébastien Villemot <sebastien@debian.org>  Fri, 13 Jan 2017 16:43:02 +0100
+
+octave-nan (3.0.3-1) unstable; urgency=medium
+
+  * Imported Upstream version 3.0.3
+  * d/p/build-against-libsvm-dev.patch: Adjust for new API of libsvm
+
+ -- Rafael Laboissiere <rafael@debian.org>  Sun, 14 Aug 2016 11:55:47 -0300
+
+octave-nan (3.0.2-2) unstable; urgency=medium
+
+  * Build against libsvm-dev (Closes: 833940)
+    + d/control: Build-depends on libsvm-dev
+    + d/p/build-against-libsvm-dev.patch: New patch
+
+ -- Rafael Laboissiere <rafael@debian.org>  Sat, 13 Aug 2016 08:52:45 -0300
+
+octave-nan (3.0.2-1) unstable; urgency=medium
+
+  * Imported Upstream version 3.0.2
+  * Bump Standards-Version to 3.9.8 (no changes needed)
+
+ -- Rafael Laboissiere <rafael@debian.org>  Thu, 04 Aug 2016 11:52:07 -0300
+
+octave-nan (3.0.1-1) unstable; urgency=medium
+
+  * Imported Upstream version 3.0.1
+
+ -- Rafael Laboissiere <rafael@laboissiere.net>  Thu, 17 Mar 2016 13:37:05 +0100
+
+octave-nan (3.0-1) unstable; urgency=medium
+
+  [ Sébastien Villemot ]
+  * Imported Upstream version 3.0
+
+  [ Rafael Laboissiere ]
+  * d/control: Use secure URIs in the Vcs-* fields
+  * d/control: Bump Standards-Version to 3.9.7 (no changes needed)
+
+ -- Sébastien Villemot <sebastien@debian.org>  Fri, 19 Feb 2016 22:23:51 +0100
+
+octave-nan (2.8.1-1) unstable; urgency=medium
+
+  [ Sébastien Villemot ]
+  * Imported Upstream version 2.8.1
+  * d/copyright: reflect upstream changes.
+  * Add Rafael Laboissiere and Mike Miller to Uploaders.
+
+  [ Rafael Laboissiere ]
+  * Bump Standards-Version to 3.9.6 (no changes needed)
+
+ -- Sébastien Villemot <sebastien@debian.org>  Mon, 20 Jul 2015 10:56:25 +0200
+
+octave-nan (2.5.9-2) unstable; urgency=medium
+
+  * reduce_test_memory_footprint.patch: new patch, reduces memory usage of
+    tests. Should fix FTBFS on mips and mipsel. Thanks to Thomas Weber for
+    investigating and finding the solution.
+
+ -- Sébastien Villemot <sebastien@debian.org>  Sat, 01 Mar 2014 15:55:19 +0100
+
+octave-nan (2.5.9-1) unstable; urgency=medium
+
+  [ Rafael Laboissiere ]
+  * Imported Upstream version 2.5.9
+  * debian/copyright: Adjust for new upstream release
+  * Drop patches hurd.patch and fix_makefile (applied upstream)
+  * Remove obsolete DM-Upload-Allowed flag
+  * Bump to Standards-Version 3.9.5, no changes needed
+
+  [ Sébastien Villemot ]
+  * Use my @debian.org email address
+
+  [ Thomas Weber ]
+  * debian/control: Use canonical URLs in Vcs-* fields
+
+ -- Sébastien Villemot <sebastien@debian.org>  Mon, 27 Jan 2014 19:08:39 +0100
+
+octave-nan (2.5.5-2) unstable; urgency=low
+
+  * hurd.patch: new patch (Closes: #670073)
+
+ -- Sébastien Villemot <sebastien.villemot@ens.fr>  Mon, 23 Apr 2012 23:02:12 +0200
+
+octave-nan (2.5.5-1) unstable; urgency=low
+
+  * Imported Upstream version 2.5.5
+  * debian/control: mention in long description that package is not autoloaded
+  * Describe how to load the package in README.Debian
+  * debian/copyright: reflect upstream changes
+
+ -- Sébastien Villemot <sebastien.villemot@ens.fr>  Tue, 03 Apr 2012 19:43:39 +0200
+
+octave-nan (2.5.2-1) unstable; urgency=low
+
+  * Imported Upstream version 2.5.2
+  * debian/copyright: update to machine-readable format 1.0
+  * Bump to debhelper compat level 9
+  * Build-depend on octave-pkg-dev >= 1.0.0, to compile against Octave 3.6
+  * Bump to Standards-Version 3.9.3, no changes needed
+  * debian/patches/fprintf_does_not_like_cells: remove patch, applied upstream
+
+ -- Sébastien Villemot <sebastien.villemot@ens.fr>  Mon, 12 Mar 2012 21:02:58 +0000
+
+octave-nan (2.4.4-1) unstable; urgency=low
+
+  [ Sébastien Villemot ]
+  * Imported Upstream version 2.4.4
+  * Bump Standards-Version to 3.9.2, no changes needed
+  * debian/copyright: reflect changes in the upstream package, upgrade to DEP5
+  * debian/watch: use qa.debian.org's sf.net redirector
+  * debian/patches/fix_makefile: refresh patch
+  * debian/rules:
+    + use our own clean rule to make the package idempotent
+    + do not include MATLAB build script in package
+  * Bump to debhelper compatibility level 8
+  * Add myself to Uploaders
+
+ -- Thomas Weber <tweber@debian.org>  Thu, 06 Oct 2011 23:12:35 +0200
+
+octave-nan (2.4.1-2) unstable; urgency=low
+
+  * Add patch fix_makefile, for adapting the values to Octave 3.2
+
+ -- Thomas Weber <tweber@debian.org>  Sun, 15 May 2011 13:19:17 +0200
+
+octave-nan (2.4.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Bump standards version to 3.9.1, no changes required
+
+ -- Thomas Weber <tweber@debian.org>  Tue, 26 Apr 2011 11:30:23 +0200
+
+octave-nan (2.3.1-2) experimental; urgency=low
+
+  * Run test suite via debian/check.m
+  * New patch: fprintf_does_not_like_cells, fixes a problem with fprintf in
+    the test suite
+
+ -- Thomas Weber <tweber@debian.org>  Sat, 02 Oct 2010 23:48:41 +0200
+
+octave-nan (2.3.1-1) experimental; urgency=low
+
+  * New upstream version (closes: 595811)
+  * Adapt watch file for individual package releases
+  * Dropped patches: fix_empty_opt_argument_for_var (applied upstream)
+
+ -- Thomas Weber <tweber@debian.org>  Sun, 26 Sep 2010 19:31:17 +0200
+
+octave-nan (1.0.9-2) unstable; urgency=low
+
+  * debian/control:
+    - Remove Rafael Laboissiere from Uploaders (Closes: #571853)
+    - Remove Ólafur Jens Sigurðsson <ojsbug@gmail.com> from Uploaders
+  * New patch: fix_empty_opt_argument_for_var: correctly handle the case of an
+    empty second argument for var() (closes: #594906).
+  * Switch to dpkg-source 3.0 (quilt) format
+
+ -- Thomas Weber <tweber@debian.org>  Wed, 01 Sep 2010 22:52:55 +0200
+
+octave-nan (1.0.9-1) unstable; urgency=low
+
+  [ Rafael Laboissiere ]
+  * debian/patches/autoload-yes.diff: Drop this patch.  This package
+    should not be autoloaded since it overrides the standard functions
+    provided in octave3.0.
+  * debian/control, debian/rules: Adjust to not use quilt anymore
+  * debian/README.source: Removed file
+  * debian/NEWS: Add a note explaining the change above
+  * debian/control: Build-depend on octave-pkg-dev >= 0.7.0, such that the
+    package is built against octave3.2
+
+  [ Thomas Weber ]
+  * New upstream release.
+  * Use debian/octave-nan.docs for installation, following the change to
+    octave-pkg-dev 0.7.1. Adjust debian/rules for this change.
+
+ -- Thomas Weber <thomas.weber.mail@gmail.com>  Tue, 29 Dec 2009 23:45:06 +0100
+
+octave-nan (1.0.8-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control:
+    + (Standards-Version): Bump to 3.8.1 (add file debian/README.source)
+    + (Depends): Add ${misc:Depends}
+    + (Vcs-Git, Vcs-Browser): Adjust to new Git repository
+  * debian/copyright: Use DEP5 URL in Format-Specification
+  * debian/patches/autoload-yes.diff: Add description
+
+ -- Rafael Laboissiere <rafael@debian.org>  Sun, 24 May 2009 15:19:15 +0200
+
+octave-nan (1.0.7-2) unstable; urgency=low
+
+  [ Rafael Laboissiere ]
+  * debian/copyright: Add header
+  * debian/control: Bump build-dependency on octave-pkg-dev to >= 0.6.4,
+    such that the package is built with the versioned packages directory
+
+  [ Thomas Weber ]
+  * Upload to unstable (closes: #501016)
+
+ -- Thomas Weber <thomas.weber.mail@gmail.com>  Sun, 05 Apr 2009 21:20:57 +0200
+
+octave-nan (1.0.7-1) experimental; urgency=low
+
+  [ Ólafur Jens Sigurðsson ]
+  * debian/control: Bumped Standards-Version to 3.8.0 (no changes
+    needed)
+
+  [ Thomas Weber ]
+  * New upstream release, handles empty second argument to std() correctly
+    (closes: #500252)
+  * Bump dependency on octave-pkg-dev to 0.6.1, to get the experimental
+    version
+
+ -- Thomas Weber <thomas.weber.mail@gmail.com>  Thu, 11 Dec 2008 00:32:40 +0100
+
+octave-nan (1.0.6-1) unstable; urgency=low
+
+  * Initial release (closes: #481484)
+
+ -- Rafael Laboissiere <rafael@debian.org>  Fri, 16 May 2008 14:09:37 +0000

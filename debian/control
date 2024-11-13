@@ -1,0 +1,35 @@
+Source: octave-nan
+Maintainer: Debian Octave Group <team+pkg-octave-team@tracker.debian.org>
+Uploaders: Thomas Weber <tweber@debian.org>,
+           Rafael Laboissière <rafael@debian.org>,
+           Sébastien Villemot <sebastien@debian.org>,
+           Mike Miller <mtmiller@debian.org>
+Section: math
+Priority: optional
+Build-Depends: debhelper-compat (= 12),
+               dh-octave (>= 0.7.1),
+               liblinear-dev,
+               libsvm-dev
+Standards-Version: 4.4.1
+Vcs-Browser: https://salsa.debian.org/pkg-octave-team/octave-nan
+Vcs-Git: https://salsa.debian.org/pkg-octave-team/octave-nan.git
+Homepage: https://octave.sourceforge.io/nan/
+Testsuite: autopkgtest-pkg-octave
+Rules-Requires-Root: no
+
+Package: octave-nan
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         ${octave:Depends}
+Description: handles data with and without missing values in Octave
+ This package allows the handling of data with and without missing
+ values by using NaN in Octave. Features of this package includes:
+ implement of the statistical tools, supports DIM argument, supports
+ unbiased estimation significance test, confidence intervals and
+ Spearman`s rank correlation included in CORRCOEF.
+ .
+ This package changes the way NaNs are handled in Octave. In order to use
+ its functions, the user must explicitly ask Octave to load the package.
+ .
+ This Octave add-on package is part of the Octave-Forge project.

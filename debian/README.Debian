@@ -1,0 +1,15 @@
+NaN package for Octave
+======================
+
+Since this package changes the way NaNs are handled in Octave (by overloading
+several core functions), it is not loaded by default upon Octave startup.
+
+In order to use its functions, the user must explicitly ask Octave to load the
+package with the following command:
+
+ pkg load nan
+
+In case the user wants to have the package loaded by default in every session,
+this command can be added to ~/.octaverc.
+
+ -- Sébastien Villemot <sebastien@debian.org>, Thu, 22 Mar 2012 20:54:24 +0100

@@ -1,0 +1,7 @@
+iris.data
+inst/make.m
+src/config.status
+src/Makefile
+src/config.h
+src/config.log
+test/debug.mat
